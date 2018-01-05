@@ -6,6 +6,8 @@ class ShibbolethIdp < Formula
 
   bottle :unneeded
 
+  keg_only "an additional install step is required which should install into /usr/local/opt/shibboleth-idp"
+
   depends_on :java => "1.8+"
 
   def install
