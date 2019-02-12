@@ -1,8 +1,8 @@
 class ModJk < Formula
   desc "An Apache HTTP Server module (mod_jk) for connecting to backends via the AJP protocol"
   homepage "http://tomcat.apache.org/connectors-doc/"
-  url "https://archive.apache.org/dist/tomcat/tomcat-connectors/jk/tomcat-connectors-1.2.42-src.tar.gz"
-  sha256 "ea119f234c716649d4e7d4abd428852185b6b23a9205655e45554b88f01f3e31"
+  url "https://archive.apache.org/dist/tomcat/tomcat-connectors/jk/tomcat-connectors-1.2.46-src.tar.gz"
+  sha256 "7e1d520e1d1dacd042087ae52be7aae47a093b93cf26931827724aa8ab66cbe9"
 
   depends_on "httpd"
   depends_on "apr-util" => :build
