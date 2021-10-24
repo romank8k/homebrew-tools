@@ -17,7 +17,7 @@ class ModJk < Formula
   patch :p0, :DATA
 
   def install
-    ENV["LIBTOOL"] = Formula["libtool"].bin
+    ENV["LIBTOOL"] = "glibtool"
 
     args = %W[
       --prefix=#{prefix}
