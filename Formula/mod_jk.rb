@@ -14,10 +14,7 @@ class ModJk < Formula
 
   # Apply patch to fix a compile error on macOS >= 11.0.
   # Requires a dependency on autoconf, automake and libtool to apply.
-  patch :p0 do
-    url "https://raw.githubusercontent.com/rkhmelichek/homebrew-tools/master/Patches/mod_jk/macos11.patch"
-    sha256 "4d7028b28c83555248e0af2f42191373705196232d4d7ac140b02a628ebb42ac"
-  end
+  patch :p0, :DATA
 
   def install
     ENV["LIBTOOL"] = Formula["libtool"].bin
@@ -44,3 +41,15 @@ class ModJk < Formula
     EOS
   end
 end
+
+__END__
+--- native/scripts/build/jk_common.m4
++++ native/scripts/build/jk_common.m4
+@@ -35,6 +35,7 @@
+ AC_MSG_CHECKING(size of $2)
+ AC_CACHE_VAL(AC_CV_NAME,
+ [AC_TRY_RUN([#include <stdio.h>
++#include <stdlib.h>
+ $1
+ main()
+ {
