@@ -8,6 +8,15 @@ class ModJk < Formula
   depends_on "apr-util" => :build
   depends_on "apr" => :build
 
+  depends_on "autoconf@2.69" => :build
+
+  # Apply patch to fix a compile error on macOS >= 11.0.
+  # Requires a dependency on autoconf (2.69 in particular) to apply.
+  patch :p0 do
+    url "https://raw.githubusercontent.com/rkhmelichek/homebrew-tools/master/Patches/mod_jk/macos11.patch"
+    sha256 "12c15af73e54e946989c721b4ddb168e3a5989773f58dcfbd699a21c80ddbc29"
+  end
+
   def install
     args = %W[
       --prefix=#{prefix}
@@ -15,6 +24,9 @@ class ModJk < Formula
     ]
 
     cd buildpath/"native" do
+      # Needed to apply the patch.
+      system "autoconf"
+
       system "./configure", *args
       system "make"
       libexec.install "./apache-2.0/mod_jk.so"
