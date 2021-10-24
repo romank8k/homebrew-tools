@@ -8,10 +8,11 @@ class ModJk < Formula
   depends_on "apr-util" => :build
   depends_on "apr" => :build
 
+  depends_on "automake" => :build
   depends_on "autoconf@2.69" => :build
 
   # Apply patch to fix a compile error on macOS >= 11.0.
-  # Requires a dependency on autoconf (2.69 in particular) to apply.
+  # Requires a dependency on automake and autoconf (2.69 in particular) to apply.
   patch :p0 do
     url "https://raw.githubusercontent.com/rkhmelichek/homebrew-tools/master/Patches/mod_jk/macos11.patch"
     sha256 "4d7028b28c83555248e0af2f42191373705196232d4d7ac140b02a628ebb42ac"
@@ -25,7 +26,7 @@ class ModJk < Formula
 
     cd buildpath/"native" do
       # Needed to apply the patch.
-      system "autoconf"
+      system "./buildconf.sh"
 
       system "./configure", *args
       system "make"
