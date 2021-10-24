@@ -18,6 +18,7 @@ class ModJk < Formula
 
   def install
     ENV["LIBTOOL"] = "glibtool"
+    ENV["LIBTOOLIZE"] = "glibtoolize"
 
     args = %W[
       --prefix=#{prefix}
