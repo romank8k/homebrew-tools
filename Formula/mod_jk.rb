@@ -9,7 +9,6 @@ class ModJk < Formula
   depends_on "apr" => :build
 
   def install
-    ENV.O2
     args = %W[
       --prefix=#{prefix}
       --with-apxs=#{Formula["httpd"].opt_bin}/apxs
