@@ -14,7 +14,7 @@ class ModJk < Formula
   # Requires a dependency on autoconf (2.69 in particular) to apply.
   patch :p0 do
     url "https://raw.githubusercontent.com/rkhmelichek/homebrew-tools/master/Patches/mod_jk/macos11.patch"
-    sha256 "5c1462db576ed3d163438842076cf5bfdc39feed6864b1f52c0375a7919e2c6b"
+    sha256 "4d7028b28c83555248e0af2f42191373705196232d4d7ac140b02a628ebb42ac"
   end
 
   def install
