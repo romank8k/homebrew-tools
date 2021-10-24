@@ -7,7 +7,6 @@ class Sshpass < Formula
   def install
     args = %W[
       --prefix=#{prefix}
-      --disable-debug
       --disable-dependency-tracking
     ]
 
