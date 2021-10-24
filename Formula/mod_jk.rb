@@ -20,6 +20,8 @@ class ModJk < Formula
   end
 
   def install
+    ENV["LIBTOOL"] = Formula["libtool"].bin
+
     args = %W[
       --prefix=#{prefix}
       --with-apxs=#{Formula["httpd"].opt_bin}/apxs
