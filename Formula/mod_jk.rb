@@ -27,6 +27,7 @@ class ModJk < Formula
     cd buildpath/"native" do
       # Needed to apply the patch.
       system "./buildconf.sh"
+      system "autoupdate"
 
       system "./configure", *args
       system "make"
