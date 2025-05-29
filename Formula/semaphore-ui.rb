@@ -16,6 +16,7 @@ class SemaphoreUi < Formula
     # Install Ansible and required dependencies in the virtual environment.
     system "#{prefix}/venv/bin/pip", "install", "ansible"
     system "#{prefix}/venv/bin/pip", "install", "pexpect"
+    system "#{prefix}/venv/bin/pip", "install", "requests"
 
     bin.install "semaphore" => "semaphore"
     chmod 0755, bin/"semaphore"
