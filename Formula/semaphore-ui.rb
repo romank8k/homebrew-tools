@@ -36,8 +36,8 @@ class SemaphoreUi < Formula
     # https://github.com/semaphoreui/semaphore/blob/develop/deployment/docker/server/server-wrapper
     (etc/"semaphore-ui").mkpath
     config_content = <<~EOS
-      2
-      #{var}/semaphore-ui/semaphore.db
+      4
+      #{var}/semaphore-ui/database.sqlite
       #{var}/semaphore-ui
 
       no
