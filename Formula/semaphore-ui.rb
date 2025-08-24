@@ -1,6 +1,6 @@
 class SemaphoreUi < Formula
-  version "2.14.12"
-  sha256 "ae883c45ea7266cef9eacd5b5ff5d049e5960624eaf02b9ad9bf4659ff230b63"
+  version "2.16.18"
+  sha256 "546fd216b13dddfa17516e79981e8a3674cadbbd0193e1cb35f4855daa4184f3"
 
   url "https://github.com/semaphoreui/semaphore/releases/download/v#{version}/semaphore_#{version}_darwin_arm64.tar.gz"
   desc "Modern UI and powerful API for Ansible, Terraform, OpenTofu, PowerShell and other DevOps tools."
